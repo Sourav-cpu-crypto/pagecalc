@@ -143,6 +143,9 @@ else
 {
 
     alert(`invalid amount`) 
+    document.querySelector("#td1").innerText=""; 
+document.querySelector("#td2").innerText="";
+document.querySelector("#td").innerText=""; 
 }
 }
 
