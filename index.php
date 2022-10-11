@@ -45,6 +45,16 @@
      {
        
      }
+     .table .td
+     {
+       border: 1px solid red;
+     }
+     .table
+     {
+       margin-left:200px;
+       width:50px;
+       height: 60px;
+     }
  </style>
   </head>
 
@@ -62,7 +72,20 @@
       </div>
     </form>
     </div>
+    <table id="table" class="table">
+      <tr>
+      <td class="td"   >Amount</td>
+      <td class="td">Fine</td>
+      <td class="td">Total</td>
+        </tr>
+        <tr class="">
+          <td class="td"  id="td" ></td>
+          <td class="td" id="td1"></td>
+          <td class="td" id="td2"></td>
+            </tr>
+        </table>
 </div>
+
   </body>
   <script>
 
@@ -93,20 +116,28 @@ else
  you need to pay fine`);
 
  let value=document.querySelector("#amount").value ;
+value=(Number(value))
 
 
 if( value>=50 && value<=300){
-
-total= 50+(5/100*value);
+  document.querySelector("#td1").innerText=5/100*value; 
+ 
+total= value+(5/100*value);
+console.log(typeof(total))
 console.log(total);
-document.querySelector("#fees").innerText=` total fees including fine ${total}` 
+document.querySelector("#td2").innerText=total;
+document.querySelector("#td").innerText=value; 
+
 
 }
 else if(value > 300){
 
 
-total= value+(10/100*value);
-document.querySelector("#fees").innerText=` total fees including fine ${total}` 
+let total= value+(10/100*value);
+console.log(total);
+document.querySelector("#td1").innerText=10/100*value; 
+document.querySelector("#td2").innerText=total;
+document.querySelector("#td").innerText=value; 
 }
 else
 {
